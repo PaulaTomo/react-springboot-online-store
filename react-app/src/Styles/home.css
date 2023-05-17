@@ -1,0 +1,25 @@
+.container {
+    max-width: 100%;
+}
+ .row{
+     padding: 0;
+ }
+
+.img-home{
+    max-width: 100%;
+    padding: 0;
+
+}
+.phone{
+    font-size: 10px;
+}
+.nav-link{
+    color: black;
+    font-weight: bold;
+}
+.nav-link:hover{
+    color: #cc5c5c;
+}
+.toggle{
+    background-color:#cc5c5c;
+}
