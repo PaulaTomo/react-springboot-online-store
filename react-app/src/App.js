@@ -8,29 +8,29 @@ import NoPage from "./Pages/NoPage";
 import SummerCollection from "./Pages/SummerCollection";
 import Cart from "./Components/Cart";
 import React from "react";
-import DetailsDress from "./Components/DressList";
+import DressList from "./Components/DressList";
 
 function App() {
-  return (
-      <>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Navigation/>}>
-              <Route index element={<Home/>}/>
-              <Route path="newCollection" element={<NewCollection/>}/>
-              <Route path="summerCollection" element={<SummerCollection/>}/>
-              <Route path="discount" element={<Discount/>}/>
-              <Route path="dresses" element={<DetailsDress/>}/>
-              <Route path="cart" element={<Cart/>}/>
-              <Route path="*" element={<NoPage/>}/>
-            </Route>
+    return (
+        <>
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<Navigation/>}>
+                        <Route index element={<Home/>}/>
+                        <Route path="newCollection" element={<NewCollection/>}/>
+                        <Route path="summerCollection" element={<SummerCollection/>}/>
+                        <Route path="discount" element={<Discount/>}/>
+                        <Route path="dresses" element={<DressList/>}/>
+                        <Route path="cart" element={<Cart/>}/>
+                        <Route path="*" element={<NoPage/>}/>
+                    </Route>
 
-          </Routes>
-        </BrowserRouter>
+                </Routes>
+            </BrowserRouter>
 
-      </>
+        </>
 
-  );
+    );
 }
 
 export default App;

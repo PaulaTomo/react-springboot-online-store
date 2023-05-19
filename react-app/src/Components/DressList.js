@@ -2,31 +2,33 @@ import React, {useState, useEffect} from "react";
 import axios from "axios";
 
 
-function DressList() {
-    const [dresses, setDresses] = useState([])
+const DressList = () => {
 
+    const [dresses, setDresses] = useState([]);
     useEffect(() => {
-        axios.get("http://localhost:8080/Shop_Dresses/dresses").then((response) => {
-            setDresses(response.data)
-        });
+
+        axios.get(`http://localhost:8080/store/dresses`)
+            .then(response => {
+                setDresses(response.data);
+            })
+            .catch(error => {
+                console.error(error);
+            });
     }, []);
+
 
     return (
         <div>
-            <h2>Listă Rochii</h2>
-            <ul>
-                {dresses.map((dresses) => (
-                    <li key={dresses.id} onClick={() => setDresses(dresses)}>
-                        {dresses.name}
-                        {dresses.color}
-                        {dresses.size}
-                        {dresses.price}
-                    </li>
-                ))}
-            </ul>
-
+            <h1>Dress List</h1>
+            {dresses.map((dress) => (
+                <div key={dress.dressId}>
+                    <h2>{dress.nameDress}</h2>
+                    <p>Price: {dress.price}</p>
+                </div>
+            ))}
         </div>
-    )
+    );
 }
+
 
 export default DressList;

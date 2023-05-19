@@ -24,7 +24,7 @@ function NewCollection(props) {
 
                     <MyCard
                         imageSrc={NewCollectionOne}
-                        nameDress={"Turquoise Belle"}
+                        nameDress={"LoveDress"}
                         price={339}
                         id={1}
 
