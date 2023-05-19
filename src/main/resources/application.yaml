@@ -1,0 +1,21 @@
+spring:
+  profiles:
+    active: local
+  datasource:
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    properties:
+      hibernate:
+        dialect: ${spring.jpa.database-platform}
+    open-in-view: true
+  mvc:
+    hidden-method:
+      filter:
+        enabled: true
+server:
+  servlet:
+    context-path: /store
+  error:
+    path: /errors/error-500
