@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface DressService {
     List<AppDress> findAllDresses();
-    AppDress getDressById(Long dressId) throws DressNotFoundException;
+    AppDress getDressById(Long id) throws DressNotFoundException;
 
 }

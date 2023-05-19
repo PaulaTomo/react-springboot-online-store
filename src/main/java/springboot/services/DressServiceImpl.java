@@ -24,10 +24,10 @@ public class DressServiceImpl implements DressService{
     }
 
     @Override
-    public AppDress getDressById(Long dressId) throws DressNotFoundException {
-        log.info("Trying to getDressById with param: dressId = {}", dressId);
+    public AppDress getDressById(Long id) throws DressNotFoundException {
+        log.info("Trying to getDressById with param: id = {}", id);
 
-        return this.appDressRepository.findById(dressId).orElseThrow(() -> new DressNotFoundException("Dress not found"));
+        return this.appDressRepository.findById(id).orElseThrow(() -> new DressNotFoundException("Dress not found"));
     }
 
 }

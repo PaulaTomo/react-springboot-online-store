@@ -3,6 +3,7 @@ package springboot.models;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
+
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -31,11 +32,4 @@ public class Color {
     private List<AppDress> dresses;
 
 
-    @Override
-    public String toString() {
-        return "Color{" +
-                "colorId=" + colorId +
-                ", colorName='" + colorName + '\'' +
-                '}';
-    }
 }

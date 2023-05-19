@@ -29,15 +29,6 @@ public class Size {
     @JsonIgnore
     private List<AppDress> dresses;
 
-    @Override
-    public String toString() {
-        return "Size{" +
-                "sizeId=" + sizeId +
-                ", sizeName='" + sizeName + '\'' +
-                '}';
-
-
-    }
 
 }
 
