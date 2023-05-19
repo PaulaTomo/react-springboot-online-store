@@ -30,15 +30,15 @@ public class DressController {
         model.addAttribute("dressList", dresses);
         return ResponseEntity.ok(dresses);
     }
-    @GetMapping("/{id}")
-    public ResponseEntity<AppDress> getDressById(@PathVariable Long id) throws DressNotFoundException {
-        AppDress dress = dressService.getDressById(id);
-        if (dress != null) {
-            return ResponseEntity.ok(dress);
+  @GetMapping("/{id}")
+   public ResponseEntity<AppDress> getDressById( @PathVariable Long id) throws DressNotFoundException {
+       AppDress dress = dressService.getDressById(id);
+       if (dress != null) {
+           return ResponseEntity.ok(dress);
         } else {
-            return ResponseEntity.notFound().build();
-        }
-    }
+           return ResponseEntity.notFound().build();
+       }
+   }
 }
 
 

@@ -19,11 +19,19 @@ import java.util.Set;
 
 
 public class AppDress {
+
+    @Column(name = "dress_name", length = 65, nullable = false)
+    private String nameDress;
+
+    @Column(name = "price", length = 65, nullable = false)
+    private BigDecimal price;
+
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "app_dress_seq")
     @SequenceGenerator(name = "app_dress_seq", allocationSize = 1)
     @Column(name = "dress_id", columnDefinition = "BIGINT DEFAULT NEXTVAL('app_dress_seq') UNIQUE")
     private int dressId;
+
 
     @ManyToMany(targetEntity = Color.class, fetch = FetchType.EAGER)
     @JoinTable(
@@ -31,7 +39,6 @@ public class AppDress {
             joinColumns = @JoinColumn(name = "dress_id"),
             inverseJoinColumns = @JoinColumn(name = "color_id")
     )
-    @JsonIgnore
     private List<Color> colors;
 
     @ManyToMany(targetEntity = Size.class, fetch = FetchType.EAGER)
@@ -40,26 +47,8 @@ public class AppDress {
             joinColumns = @JoinColumn(name = "dress_id"),
             inverseJoinColumns = @JoinColumn(name = "size_id")
     )
-    @JsonIgnore
 
     private List<Size> sizes;
 
 
-    @Column(name = "dress_name", length = 65, nullable = false)
-    private String nameDress;
-
-    @Column(name = "price", length = 65, nullable = false)
-    private BigDecimal price;
-//
-
-    @Override
-    public String toString() {
-        return "AppDress{" +
-                "dressId=" + dressId +
-                ", dressName='" + nameDress+ '\'' +
-                ", price=" + price +
-                ", sizes=" + sizes +
-                ", colors=" + colors +
-                '}';
-    }
 }
